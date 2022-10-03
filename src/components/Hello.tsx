@@ -1,5 +1,7 @@
-const Hello = () => {
-  const onClick = () => {
+import React from "react";
+
+const Hello: () => JSX.Element = () => {
+  const onClick: () => void = () => {
     alert("hello");
   };
   const text = "Hello, React";
