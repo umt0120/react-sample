@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import Hello from "./components/Hello";
 import reportWebVitals from "./reportWebVitals";
+import Page from "./components/ContextSample";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -12,6 +13,7 @@ root.render(
   <React.StrictMode>
     <App />
     <Hello />
+    <Page />
   </React.StrictMode>
 );
 
