@@ -5,6 +5,7 @@ import App from "./App";
 import Hello from "./components/Hello";
 import reportWebVitals from "./reportWebVitals";
 import Page from "./components/ContextSample";
+import Counter from "./components/Counter";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -14,6 +15,7 @@ root.render(
     <App />
     <Hello />
     <Page />
+    <Counter initialValue={0} />
   </React.StrictMode>
 );
 
