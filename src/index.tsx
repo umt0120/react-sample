@@ -6,6 +6,7 @@ import Hello from "./components/Hello";
 import reportWebVitals from "./reportWebVitals";
 import Page from "./components/ContextSample";
 import Counter from "./components/Counter";
+import {Parent} from "./components/Parent";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -16,6 +17,7 @@ root.render(
     <Hello />
     <Page />
     <Counter initialValue={0} />
+    <Parent />
   </React.StrictMode>
 );
 
