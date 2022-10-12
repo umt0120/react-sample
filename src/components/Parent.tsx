@@ -13,15 +13,16 @@ const Fizz: (props: FizzProps) => JSX.Element = (props: FizzProps) => {
 
 interface BuzzProps {
   isBuzz: boolean;
+  onClick: () => void;
 }
 
 // eslint-disable-next-line react/display-name
 const Buzz = memo<BuzzProps>((props) => {
   // eslint-disable-next-line react/prop-types
-  const { isBuzz } = props;
+  const { isBuzz, onClick } = props;
   // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
   console.log(`Buzzが再描画されました, isBuzz=${isBuzz}`);
-  return <span>{isBuzz ? "Buzz" : ""}</span>;
+  return <span onClick={onClick}>{isBuzz ? "Buzz" : ""}</span>;
 });
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
@@ -30,6 +31,12 @@ export const Parent = () => {
   const isFizz = count % 3 === 0;
   const isBuzz = count % 5 === 0;
 
+  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+  const onBuzzClick = () => {
+    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+    console.log(`Buzzがクリックされました, isBuzz=${isBuzz}`);
+  };
+
   console.log(`Parentが再描画されました, count=${count}`);
   return (
     <div>
@@ -37,7 +44,7 @@ export const Parent = () => {
       <p>{`現在のカウント: ${count}`}</p>
       <p>
         <Fizz isFizz={isFizz} />
-        <Buzz isBuzz={isBuzz} />
+        <Buzz isBuzz={isBuzz} onClick={onBuzzClick}/>
       </p>
     </div>
   );
